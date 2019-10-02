@@ -39,7 +39,8 @@ export class MapaComponent implements OnInit {
     radio: 700
   },{
     radio: 800
-  }]
+  },{radio: 900}
+]
   constructor(private inegi: InegiService) {}
    
   async ngOnInit() {
