@@ -1,0 +1,45 @@
+<br>
+<form>
+    <body>
+        <div class="container">
+            <div id="map" (click)="getCoor(radio.value)">
+            </div>
+        </div>
+        <br>
+        <div class="btn-group row" id="barra">
+                <div class="col-2" style="padding-left: 100px">Radio en metros</div>
+                <div class="col-2">
+                    <select class="form-control" style="color:rgb(103, 104, 104)" name="radio" #radio >
+                        <option *ngFor="let rad of radios"  [value]="rad.radio"> {{ rad.radio }} </option>
+                    </select>
+                </div>
+                <div class="col-2" style="padding-left: 100px">Buscar producto</div>
+                <div class="col-2">
+                    <input type="text" id="prod" name="prod" #prod required>
+                </div>
+                <div class="col-2" *ngIf="show">
+                    <button type="button" (click)="busca_prods(prod.value)">buscar</button>
+                </div>
+            </div>
+        <br>
+
+        <div id="grid">
+            <table class="table table-dark">
+                <thead>
+                    <!--<th scope="col"></th>-->
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">DIRECCION</th>
+                    <th scope="col">TELEFONO</th>
+                </thead>
+                <tbody>
+                    <tr id="celda" *ngFor=" let res of array; let i = index"> <!--(click)="play_id(res['directorio'],i)">
+                        <!--<th scope="row">{{i+1}}</th>-->
+                        <td>{{res['nom_estab']}}</td>
+                        <td>{{res['nom_vial']}} {{res['numero_ext']}}, {{res['nomb_asent']}}, {{res['municipio']}}, {{res['entidad']}}, CP. {{res['cod_postal']}}</td>
+                        <td>{{res['telefono']}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+    </body>
+</form>
