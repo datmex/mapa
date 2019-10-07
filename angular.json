@@ -29,10 +29,10 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/app/map/leaflet.css"
+              "src/app/leaflet/leaflet.css"
             ],
             "scripts": [
-              "src/app/map/leaflet.js"
+              "src/app/leaflet/leaflet.js"
             ]
           },
           "configurations": {

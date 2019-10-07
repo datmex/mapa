@@ -5,8 +5,8 @@ import { HttpClient,HttpErrorResponse } from '@angular/common/http';
 })
 export class InegiService{
 
-    //url = 'http://172.16.106.41:5000'; // internal ip
-    url = 'http://192.168.1.76:5000';
+    url = 'http://172.16.104.86:5000'; // internal ip
+    //url = 'http://192.168.1.76:5000';
 
     constructor(private http : HttpClient){}
 
