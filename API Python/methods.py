@@ -24,7 +24,7 @@ def findloc(data):
     rad = int(res['rad'])
     print("Radio ",rad)
 	#  longitud, latitud  formato mongo
-    res = mongo.actividades.find( { 'location': { '$near': { '$geometry': {'type':"Point", 'coordinates': [longitud,lat] }, '$minDistance': 0, '$maxDistance': rad}} },
+    res = mongo.denue.find( { 'location': { '$near': { '$geometry': {'type':"Point", 'coordinates': [longitud,lat] }, '$minDistance': 0, '$maxDistance': rad}} },
     {"_id":1,"nom_estab":1,"codigo_act":1,"nom_vial":1,"tipo_vial":1,"nomb_asent":1,"cod_postal":1,"location":1,"numero_ext":1,
         "municipio":1,"entidad":1,"telefono":1})
     result = dump(res)
@@ -34,19 +34,19 @@ def get_prod(data):
     res = json.loads(data)
     string = str(res['prod'])
     pat = re.compile(r'{}'.format(string), re.I)
-    res = mongo.clasifica.find({'productos': {'$regex': pat}})
+    res = mongo.scian.find({'productos': {'$regex': pat}})
     resp = dump(res)
     return resp
 
 # --- metodos no utilizados
 
 def clasi():
-    res = mongo.clasifica.find({}).limit(1)
+    res = mongo.scian.find({}).limit(1)
     resp = dump(res)
     return resp
 
 def acti():
-    res = mongo.actividades.find().limit(1)
+    res = mongo.denue.find().limit(1)
     resp = dump(res)
     return resp
 
@@ -71,7 +71,7 @@ def code(data):
             "municipio":1,"entidad":1,"telefono":1}
         },{'$limit':1}
     ]
-    result = mongo.actividades.aggregate(pipeline)
+    result = mongo.denue.aggregate(pipeline)
     resp = dump(result)
     #print(resp)
     return resp
