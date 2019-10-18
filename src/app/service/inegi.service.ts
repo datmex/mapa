@@ -6,7 +6,7 @@ import { HttpClient,HttpErrorResponse } from '@angular/common/http';
 export class InegiService{
 
     //url = 'http://172.16.104.86:5000'; // internal ip
-    url = 'http://172.16.104.68:5000';
+    url = 'http://flaskinegi.azurewebsites.net';
 
     constructor(private http : HttpClient){}
 
